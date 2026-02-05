@@ -4,14 +4,15 @@ on:
   workflow_dispatch:
     inputs:
       android_version:
-        description: 'Android Version (Kernel) (e.g., 14)'
+        description: '内核安卓版本'
         required: false
       kernel_version:
-        description: 'Kernel Version (e.g., 6.1)'
+        description: '内核版本'
         required: true
       driver_name:
-        description: 'Driver Module Name (e.g., mydriver.ko)'
+        description: '模块名'
         required: true
+        default: 'Arlo.ko'
       target_arch:
         description: 'Target Architecture (aarch64, x86_64, etc.)'
         required: true
