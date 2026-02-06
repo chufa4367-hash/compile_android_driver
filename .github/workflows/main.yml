@@ -41,7 +41,8 @@ jobs:
           mkdir -p android-kernel && cd android-kernel
           # 修复：如果 android_version 为空，直接使用内核版本
           if [ -z "${{ github.event.inputs.android_version }}" ]; then
-            repo init -u https://android.googlesource.com/kernel/manifest -b android-${{ github.event.inputs.kernel_version }}
+            repo init -u https://android.googlesource.com/kernel/manifest -b  common-android-${{ github.event.inputs.kernel_version }}
+            
           else
             repo init -u https://android.googlesource.com/kernel/manifest -b common-android${{ github.event.inputs.android_version }}-${{ github.event.inputs.kernel_version }}
           fi
